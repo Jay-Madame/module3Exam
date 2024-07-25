@@ -5,14 +5,18 @@
 #include <vector>
 #include "movie.h"
 #include "movie.cpp"
+#include "city.h"
+#include "city.cpp"
 
 void testPerson();
 void testMovie();
+void testCity();
 
 int main()
 {
-    testPerson();
-    testMovie();
+    // testPerson();
+    // testMovie();
+    testCity();
     return 0;
 }
 
@@ -46,4 +50,12 @@ void testMovie()
     cast.push_back(person2);
     Movie Oppenheimer("Oppenheimer", director, cast, 240);
     std::cout << Oppenheimer << std::endl;
+}
+
+void testCity()
+{
+    City newCity("Fort Smith", 16.00, 43.00);
+    std::cout << newCity.getName() << std::endl;
+    std::cout << newCity.getLatitude() << std::endl;
+    std::cout << newCity.getLongitude() << std::endl;
 }

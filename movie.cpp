@@ -1,5 +1,5 @@
 #include "movie.h"
-#include "person.h" //again, my compiler will sadly not work w/o cpp file but ik its unnecessary on other os
+#include "person.h"
 
 Movie::Movie(std::string n, Person dir, std::vector<Person> cst, int rtm)
     : name(n), director(dir), cast(cst), runtimeMin(rtm)
