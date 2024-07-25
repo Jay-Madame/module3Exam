@@ -7,16 +7,20 @@
 #include "movie.cpp"
 #include "city.h"
 #include "city.cpp"
+#include "itinerary.h"
+#include "itinerary.cpp"
 
 void testPerson();
 void testMovie();
 void testCity();
+void testItinerary();
 
 int main()
 {
     // testPerson();
     // testMovie();
-    testCity();
+    // testCity();
+    testItinerary();
     return 0;
 }
 
@@ -58,4 +62,36 @@ void testCity()
     std::cout << newCity.getName() << std::endl;
     std::cout << newCity.getLatitude() << std::endl;
     std::cout << newCity.getLongitude() << std::endl;
+}
+
+void testItinerary()
+{
+    City city1("Fort Smith", 35.39, 94.42);
+    City city2("New York", 40.71, -74.01);
+    City city3("Dallas", 32.78, -96.81);
+    City city4("Chicago", 41.85, -87.65);
+    Itinerary newItin;
+    newItin.addCity(city1);
+    newItin.addCity(city2);
+    /*std::vector<City> cities = newItin.getCities();
+    for (int i = 0; i < cities.size(); i++)
+    {
+        std::cout << cities[i] << std::endl;
+    }
+    */
+    std::cout << newItin.getDistance() << std::endl;
+
+    //cities.clear();
+    Itinerary otherCities;
+    otherCities.addCity(city3);
+    newItin.addCity(city4);
+
+    newItin = newItin + otherCities;
+    /*cities = newItin.getCities();
+    for (int i = 0; i < cities.size(); i++)
+    {
+        std::cout << cities[i] << std::endl;
+    }
+    */
+    std::cout << newItin.getDistance(newItin.getCities()[2], newItin.getCities()[3]) << std::endl;
 }
